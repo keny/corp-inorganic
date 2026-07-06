@@ -1,0 +1,63 @@
+# M&A パイプライン — 単一の情報源
+# 変更は deal-desk エージェント経由のみ。スキーマとステージ定義は pipeline/README.md 参照。
+#
+# ⚠️ 以下の deals はセットアップ時のサンプル(架空の会社・ダミーデータ)。
+#    実案件の登録時に削除すること(/pipeline add で登録、サンプル削除を依頼)。
+
+meta:
+  updated: "2026-07-06"
+  stale_threshold_days: 14
+
+deals:
+  - id: "SAMPLE-001"
+    codename: sample-aurora
+    company: "（架空のサンプル）Example Connectivity GmbH"
+    type: acquisition
+    stage: "20_deep_dive"
+    priority: A
+    owner: "（要アサイン）"
+    thesis_pillar: "P1"
+    source: "サンプルデータ"
+    score: 3.8
+    next_action: "（サンプル）技術アーキテクチャの追加調査と devils-advocate 反証"
+    next_action_due: "2026-07-20"
+    profile: null
+    history:
+      - { date: "2026-06-15", event: "（サンプル）market-scan で発掘、00_sourcing に登録" }
+      - { date: "2026-06-25", event: "（サンプル）初期スクリーニング通過、20_deep_dive へ" }
+    notes: "スキーマの記入例として配置。実運用開始時に削除。"
+
+  - id: "SAMPLE-002"
+    codename: sample-birch
+    company: "（架空のサンプル）Example Edge AI Inc."
+    type: investment
+    stage: "00_sourcing"
+    priority: C
+    owner: "（要アサイン）"
+    thesis_pillar: "P2"
+    source: "サンプルデータ"
+    score: null
+    next_action: "（サンプル）初期スクリーニング実施の要否判断"
+    next_action_due: "2026-07-31"
+    profile: null
+    history:
+      - { date: "2026-07-01", event: "（サンプル）ロングリストに追加" }
+    notes: "マイノリティ出資(type: investment)の記入例。実運用開始時に削除。"
+
+  - id: "SAMPLE-003"
+    codename: sample-cedar
+    company: "（架空のサンプル）Example IoT Security KK"
+    type: acquisition
+    stage: "dropped"
+    priority: C
+    owner: "（要アサイン）"
+    thesis_pillar: "P2"
+    source: "サンプルデータ"
+    score: 2.6
+    next_action: null
+    next_action_due: null
+    profile: null
+    history:
+      - { date: "2026-05-10", event: "（サンプル）ロングリストに追加" }
+      - { date: "2026-06-01", event: "（サンプル）スコア2.6・単一顧客依存(キルクライテリア1)により見送り" }
+    notes: "見送り案件の記録例(削除せず dropped で残す)。実運用開始時に削除。"
